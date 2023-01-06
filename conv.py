@@ -28,3 +28,7 @@ class msblock(nn.Module):
         y = torch.cat(y, dim=-3)
         y = self.merge(y)
         return y
+
+
+class resblock(nn.Module):
+    pass
