@@ -1,11 +1,11 @@
 import torch
 import torch.nn as nn
 
-def block(out_channels, activation=None, **kwargs):
+def block(out_channels, kernel_size=3, activation=None, **kwargs):
     if activation is None:
         activation = nn.ReLU()
     return nn.Sequential(
-        nn.LazyConv2d(out_channels, **kwargs),
+        nn.LazyConv2d(out_channels, kernel_size=kernel_size, **kwargs),
         nn.BatchNorm2d(out_channels),
         activation
     )
